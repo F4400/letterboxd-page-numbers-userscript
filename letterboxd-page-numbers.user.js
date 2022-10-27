@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Letterboxd Page Numbers
 // @namespace    https://github.com/F4400
-// @version      0.2
+// @version      0.3
 // @description  Adds all page numbers for easier navigation.
 // @author       F4400
 // @match        https://letterboxd.com/*
