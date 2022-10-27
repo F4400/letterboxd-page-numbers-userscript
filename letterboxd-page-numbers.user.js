@@ -9,9 +9,9 @@
 // @grant        none
 // ==/UserScript==
 
-const test = document.getElementsByClassName('paginate-page');
+const allLinks = document.getElementsByClassName('paginate-page');
 
-var lastLink = test[test.length - 1].innerHTML;
+var lastLink = allLinks[allLinks.length - 1].innerHTML;
 var regLastNo = /(\d+)(?!.*\d)/;
 
 var lastNo = lastLink.match(regLastNo)[0];
@@ -20,7 +20,7 @@ var url = window.location.href;
 
 var breakPoint = 0;
 if (url.match(/\/films\//)) {
-    breakPoint = 19;
+    breakPoint = 20;
 } else {
     breakPoint = 13;
 }
@@ -30,7 +30,7 @@ var pageNo = url.match(regPageNo);
 var no = pageNo[0];
 
 var aHref = "";
-var firstLink = test[0].innerHTML;
+var firstLink = allLinks[0].innerHTML;
 
 if (lastNo === no) {
     aHref = firstLink.substring(0, firstLink.length - (7 + 1)) + "/page/";
@@ -56,6 +56,8 @@ var lines = Math.floor(lastNo / breakPoint + 1);
 const element0 = document.getElementsByClassName('pagination')[0];
 element0.setAttribute('style', 'height:' + 30 * lines + 'px');
 
+const element2 = document.getElementsByClassName('paginate-pages')[0];
+element2.setAttribute('style', 'width:64%; left:18%');
 
 if (lastNo > breakPoint) {
     const element1 = document.getElementsByClassName('paginate-page');
