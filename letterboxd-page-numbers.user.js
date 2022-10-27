@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Letterboxd Page Numbers
 // @namespace    https://github.com/F4400
-// @version      0.1
+// @version      0.2
 // @description  Adds all page numbers for easier navigation.
 // @author       F4400
 // @match        https://letterboxd.com/*
 // @icon         https://letterboxd.com/favicon.ico
 // @grant        none
+// @updateURL    https://github.com/F4400/letterboxd-page-numbers-userscript/raw/master/letterboxd-page-numbers.user.js
+// @downloadURL  https://github.com/F4400/letterboxd-page-numbers-userscript/raw/master/letterboxd-page-numbers.user.js
 // ==/UserScript==
 
 const allLinks = document.getElementsByClassName('paginate-page');
