@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Letterboxd Page Numbers
 // @namespace    https://github.com/F4400
-// @version      1.0
+// @version      1.1
 // @description  Adds all page numbers for easier navigation.
 // @author       F4400
 // @match        https://letterboxd.com/*
@@ -33,6 +33,8 @@ var aHref = "";
 var firstLink = allLinks[0].innerHTML;
 
 if (lastNo === no) {
+    aHref = firstLink.substring(0, firstLink.length - (7 + 1)) + "/page/";
+} else if (lastNo < no && lastNo == 1) {
     aHref = firstLink.substring(0, firstLink.length - (7 + 1)) + "/page/";
 } else {
     aHref = lastLink.substring(0, lastLink.length - (7 + 2 * lastNo.length));
