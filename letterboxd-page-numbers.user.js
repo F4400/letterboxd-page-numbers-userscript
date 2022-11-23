@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Letterboxd Page Numbers
 // @namespace    https://github.com/F4400
-// @version      1.2
+// @version      1.3
 // @description  Adds all page numbers for easier navigation.
 // @author       F4400
 // @match        https://letterboxd.com/*
@@ -19,7 +19,9 @@ var lastNo = lastLink.match(regLastNo)[0];
 var url = window.location.href;
 
 var breakPoint = 0;
-if (url.match(/\/films\//)) {
+if (url.match(/\/reviews\//) || url.match(/\/list\//) || url.match(/\/lists\//) ) {
+    breakPoint = 14;
+} else if (url.match(/\/films\//) || url.match(/\/watchlist\//) || url.match(/\/diary\//) ) {
     breakPoint = 20;
 } else {
     breakPoint = 14;
